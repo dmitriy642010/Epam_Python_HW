@@ -1,19 +1,16 @@
-import unittest
-
-from Max_Min import Min_Max
+import pytest
+from max_min import find_maximum_and_minimum
 
 test_file = "numbers.txt"
-#find_maximum_and_minimum("numbers.txt")
-class test_3(unittest.TestCase):
-    def setUp(self):
-        self.chisla = Min_Max()
-
-    def test_max_min(self):
-        """
-        Test to find right min and max integers
-        """
-        self.assertEqual(self.chisla.find_maximum_and_minimum(test_file), (45,90))
 
 
-if __name__ == '__main__':
-    unittest.main()
+@pytest.mark.parametrize(
+    ["value", "expected_result"],
+    [
+        (test_file, (45, 90)),
+    ],
+)
+def test_power_of_2(value: str, expected_result: tuple):
+    actual_result = find_maximum_and_minimum(value)
+
+    assert actual_result == expected_result
