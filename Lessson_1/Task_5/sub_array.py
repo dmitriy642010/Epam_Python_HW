@@ -1,21 +1,19 @@
-class Sub_array():
-    def max_length(self,s, k):
+from typing import List
 
-        sub_start = 0
-        sub_end = 0
-        sub_sum = 0
 
-        for i in s:
-            sub_sum += i
-            sub_end += 1
+def find_maximal_subarray_sum(s: List[int], k: int) -> int:
+    sub_start = 0
+    sub_end = 0
+    sub_sum = 0
 
-            while sub_sum > k:
-                sub_sum -= s[sub_start]
-                sub_start += 1
+    for i in s:
+        sub_sum += i
+        sub_end += 1
 
-            summation = sub_end + sub_start
+        while sub_sum > k:
+            sub_sum -= s[sub_start]
+            sub_start += 1
 
-        return summation
-prikol = Sub_array()
+        summation = sub_end + sub_start
 
-print(prikol.max_length([7, 4, -15, -4, 9, 2, 6, -1],5))
+    return summation

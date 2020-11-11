@@ -1,18 +1,22 @@
-import unittest
+from typing import List
 
-from four import Poisk
-"""
-    Test to find sum of 4 int that could give zero in sum
-"""
+import pytest
 
-class test_4(unittest.TestCase):
-    def setUp(self):
-        self.otvet = Poisk()
-    
-    def test_sum(self):
-        self.assertEqual(self.otvet.check_sum_of_four([200,150], [-150,300], [200,-300], [150,-200]), 1)
+from four import check_sum_of_four
 
 
+@pytest.mark.parametrize(
+    ("a", "b", "c", "d", "expected_result"),
+    [
+        ([], [], [], [], 0),
+        ([0, -5, 2, 7], [0, 5, -2, 7], [0, 5, 2, -7], [0, 5, 2, 7], 6),
+        ([-1], [0], [0], [1], 1),
+        ([0], [0], [0], [0], 1),
+    ],
+)
+def test_check_sum_of_four(
+    a: List[int], b: List[int], c: List[int], d: List[int], expected_result: int
+):
 
-if __name__ == '__main__':
-    unittest.main()
+    actual_result = check_sum_of_four(a, b, c, d)
+    assert actual_result == expected_result

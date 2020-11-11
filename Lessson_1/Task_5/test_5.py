@@ -1,23 +1,18 @@
-import unittest
+from typing import List
 
-from sub_array import Sub_array
-"""
-    Test to find sum of sub-array that is equal or lower k
-"""
+import pytest
 
-class test_4(unittest.TestCase):
-    def setUp(self):
-        self.otvet = Sub_array()
-    
-    def test_sum_1(self):
-        self.assertEqual(self.otvet.max_length([1, 3, -1, -3, 5, 3, 6, 7],3), 16)
-    
-    def test_sum_2(self):
-        self.assertEqual(self.otvet.max_length([7, 4, -15, -4, 9, 2, 6, -1],5), 9)
-    
+from sub_array import find_maximal_subarray_sum
 
 
-if __name__ == '__main__':
-    unittest.main()
+@pytest.mark.parametrize(
+    ("value1", "value2", "expected_result"),
+    [
+        ([1, 3, -1, -3, 5, 3, 6, 7], 3, 16),
+        ([7, 4, -15, -4, 9, 2, 6, -1], 5, 9),
+    ],
+)
+def test_find_maximal_subarray_sum(s: List[int], k: int, expected_result: int):
 
-
+    actual_result = find_maximal_subarray_sum(s, k)
+    assert actual_result == expected_result
