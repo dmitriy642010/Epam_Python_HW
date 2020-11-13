@@ -22,21 +22,42 @@ def get_longest_diverse_words(file_path: str) -> List[str]:
     return data_set[:10]
 
 
-print(get_longest_diverse_words("data.txt"))
-
-
-"""
-
+# print(get_longest_diverse_words("data.txt"))
 
 
 def get_rarest_char(file_path: str) -> str:
-    ...
+    d = {}
+
+    for c in open(file_path, "r").read():
+        if c in d:
+            d[c] += 1
+        else:
+            d[c] = 1
+
+    min_value = min(d.values())
+    min_keys = [k for k in d if d[k] == min_value]
+
+    return min_keys
+
+
+# print(get_rarest_char("data.txt"))
 
 
 def count_punctuation_chars(file_path: str) -> int:
-    ...
+    ch = []
+    file = data_open(file_path)
+
+    for i in file:
+        if i in string.punctuation:
+            ch.append(i)
+    result = max(ch)
+
+    return result
 
 
+# print(count_punctuation_chars("data.txt"))
+
+"""
 def count_non_ascii_chars(file_path: str) -> int:
     ...
 
