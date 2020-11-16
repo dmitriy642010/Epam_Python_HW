@@ -8,9 +8,6 @@ def data_open(file_path):
         return file_path
 
 
-# print(data_open("data1.txt"))
-
-
 def get_longest_diverse_words(file_path: str) -> List[str]:
 
     file = data_open(file_path)
@@ -22,25 +19,18 @@ def get_longest_diverse_words(file_path: str) -> List[str]:
     return data_set[:10]
 
 
-# print(get_longest_diverse_words("data.txt"))
-
-
 def get_rarest_char(file_path: str) -> str:
+    text = data_open(file_path)
     d = {}
-
-    for c in open(file_path, "r").read():
-        if c in d:
-            d[c] += 1
+    for elem in text:
+        if elem not in d:
+            d[elem] = 1
         else:
-            d[c] = 1
-
-    min_value = min(d.values())
-    min_keys = [k for k in d if d[k] == min_value]
-
-    return min_keys
-
-
-# print(get_rarest_char("data.txt"))
+            d[elem] += 1
+    minimum = min(d.values())
+    for num, count in d.items():
+        if count == minimum:
+            return num
 
 
 def count_punctuation_chars(file_path: str) -> int:
@@ -50,17 +40,25 @@ def count_punctuation_chars(file_path: str) -> int:
     for i in file:
         if i in string.punctuation:
             ch.append(i)
-    result = max(ch)
+    result = len(ch)
 
     return result
 
 
-# print(count_punctuation_chars("data.txt"))
-
-"""
 def count_non_ascii_chars(file_path: str) -> int:
-    ...
+    file = data_open(file_path)
+    res = 0
+    for elem in file:
+        if ord(elem) > 128:
+            res += 1
+    return res
 
 
-def get_most_common_non_ascii_char(file_path: str) -> str:  
-    """
+print(count_non_ascii_chars("file.txt"))
+
+
+def get_most_common_non_ascii_char(file_path: str) -> str:
+    file = data_open(file_path)
+    chars = [ch for ch in file if ord(ch) > 128]
+    chars_counter = {chars.count(val): val for val in set(chars)}
+    return chars_counter[max(chars_counter.keys())]
