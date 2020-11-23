@@ -54,9 +54,6 @@ def count_non_ascii_chars(file_path: str) -> int:
     return res
 
 
-print(count_non_ascii_chars("file.txt"))
-
-
 def get_most_common_non_ascii_char(file_path: str) -> str:
     file = data_open(file_path)
     chars = [ch for ch in file if ord(ch) > 128]

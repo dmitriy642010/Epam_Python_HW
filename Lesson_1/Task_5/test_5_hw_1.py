@@ -11,7 +11,9 @@ from sub_array import find_maximal_subarray_sum
         ([7, 4, -15, -4, 9, 2, 6, -1], 5, 9),
     ],
 )
-def test_find_maximal_subarray_sum(s: List[int], k: int, expected_result: int):
+def test_find_maximal_subarray_sum(
+    value1: List[int], value2: int, expected_result: int
+):
 
-    actual_result = find_maximal_subarray_sum(s, k)
+    actual_result = find_maximal_subarray_sum(value1, value2)
     assert actual_result == expected_result

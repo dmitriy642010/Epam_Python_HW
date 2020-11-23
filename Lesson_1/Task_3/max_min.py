@@ -8,6 +8,3 @@ def find_maximum_and_minimum(numbers: str):
         nums
     )  # we sort the list of integers to take the fisrt and last result for min and max
     return result[0], result[-1]
-
-
-print(find_maximum_and_minimum("numbers.txt"))
