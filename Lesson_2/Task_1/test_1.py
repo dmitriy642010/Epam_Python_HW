@@ -1,16 +1,15 @@
 import os
 from typing import List
 
+import pytest
 from data_work import (
+    count_non_ascii_chars,
+    count_punctuation_chars,
     data_open,
     get_longest_diverse_words,
-    get_rarest_char,
-    count_punctuation_chars,
-    count_non_ascii_chars,
     get_most_common_non_ascii_char,
+    get_rarest_char,
 )
-
-import pytest
 
 
 @pytest.fixture()

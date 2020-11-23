@@ -1,7 +1,6 @@
 import os
 
 import pytest
-
 from magic_number import read_magic_number
 
 

@@ -1,7 +1,6 @@
 from typing import Sequence
 
 import pytest
-
 from check_fib import check_fibonacci
 
 

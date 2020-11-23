@@ -1,8 +1,7 @@
 from typing import Any, List
 
-from combinations import combi
-
 import pytest
+from combinations import combi
 
 
 @pytest.mark.parametrize(

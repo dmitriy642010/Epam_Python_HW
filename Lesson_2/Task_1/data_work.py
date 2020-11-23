@@ -1,5 +1,5 @@
-from typing import List
 import string
+from typing import List
 
 
 def data_open(file_path):

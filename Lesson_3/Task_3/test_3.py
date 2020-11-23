@@ -1,5 +1,4 @@
 import pytest
-
 from code_bags import make_filter
 
 sample_data = [

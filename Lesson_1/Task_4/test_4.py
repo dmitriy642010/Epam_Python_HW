@@ -1,7 +1,6 @@
 from typing import List
 
 import pytest
-
 from four import check_sum_of_four
 
 

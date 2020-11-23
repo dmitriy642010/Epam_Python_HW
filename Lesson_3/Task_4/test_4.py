@@ -1,6 +1,5 @@
-from armstrong import is_armstrong
-
 import pytest
+from armstrong import is_armstrong
 
 
 @pytest.mark.parametrize(

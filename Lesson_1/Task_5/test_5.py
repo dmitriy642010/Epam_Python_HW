@@ -1,7 +1,6 @@
 from typing import List
 
 import pytest
-
 from sub_array import find_maximal_subarray_sum
 
 
