@@ -1,6 +1,6 @@
 from typing import List
 
-from cache_task import cache
+from Epam_training_HW.hw.hw_2_task_4 import cache
 
 
 def func(a, b):

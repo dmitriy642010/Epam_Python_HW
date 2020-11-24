@@ -1,5 +1,6 @@
+from Epam_training_HW.hw.hw_1_task_1 import check_power_of_2
+
 import pytest
-from first_task import check_power_of_2
 
 
 @pytest.mark.parametrize(

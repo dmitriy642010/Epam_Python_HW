@@ -1,7 +1,7 @@
 import os
 
 import pytest
-from magic_number import read_magic_number
+from Epam_training_HW.hw.hw_4_task_1 import read_magic_number
 
 
 @pytest.fixture()

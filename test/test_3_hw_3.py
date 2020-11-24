@@ -1,5 +1,5 @@
 import pytest
-from code_bags import make_filter
+from Epam_training_HW.hw.hw_3_task_3 import make_filter
 
 sample_data = [
     {

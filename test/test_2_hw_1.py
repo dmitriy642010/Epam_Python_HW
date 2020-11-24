@@ -1,7 +1,7 @@
 from typing import Sequence
 
 import pytest
-from check_fib import check_fibonacci
+from Epam_training_HW.hw.hw_1_task_2 import check_fibonacci
 
 
 @pytest.mark.parametrize(

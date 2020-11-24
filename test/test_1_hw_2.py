@@ -1,8 +1,7 @@
 import os
 from typing import List
 
-import pytest
-from data_work import (
+from Epam_training_HW.hw.hw_2_task_1 import (
     count_non_ascii_chars,
     count_punctuation_chars,
     data_open,
@@ -10,6 +9,8 @@ from data_work import (
     get_most_common_non_ascii_char,
     get_rarest_char,
 )
+
+import pytest
 
 
 @pytest.fixture()

@@ -1,7 +1,7 @@
 from typing import List, Tuple
 
 import pytest
-from common_elem import major_and_minor_elem
+from Epam_training_HW.hw.hw_2_task_2 import major_and_minor_elem
 
 
 @pytest.mark.parametrize(
@@ -9,7 +9,7 @@ from common_elem import major_and_minor_elem
     [
         ([2, 2, 1, 1, 1, 2, 2], (2, 1)),
         ([3, 2, 3], (3, 2)),
-        ([7, 8, 7, 8, 7, 7, 5], (7, 4)),
+        ([7, 8, 7, 8, 7, 7, 5], (7, 5)),
     ],
 )
 def test_major_and_minor_elem(value: List, expected_result: Tuple[int, int]):
