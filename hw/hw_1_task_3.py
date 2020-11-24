@@ -6,3 +6,6 @@ def find_maximum_and_minimum(numbers: str):
 
     result = sorted(nums)
     return result[0], result[-1]
+
+
+print(find_maximum_and_minimum(("numbers.txt")))

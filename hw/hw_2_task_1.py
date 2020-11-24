@@ -4,8 +4,8 @@ from typing import List
 
 def data_open(file_path):
     with open(file_path) as f:
-        file_path = bytes(f.read(), "ascii").decode("unicode-escape")
-        return file_path
+        file = bytes(f.read(), "ascii").decode("unicode-escape")
+        return file
 
 
 def get_longest_diverse_words(file_path: str) -> List[str]:
@@ -14,7 +14,7 @@ def get_longest_diverse_words(file_path: str) -> List[str]:
     exclude = set(string.punctuation)
     text = ''.join(ch for ch in file if ch not in exclude)
     data_set = text.split()
-    data_set = sorted(data_set, key=lambda x: (-len(set(x)), -len(x)))
+    data_set = sorted(data_set, key=lambda x: (len(set(x)), len(x)))
 
     return data_set[:10]
 
@@ -31,6 +31,9 @@ def get_rarest_char(file_path: str) -> str:
     for num, count in d.items():
         if count == minimum:
             return num
+
+
+print(get_rarest_char("char.txt"))
 
 
 def count_punctuation_chars(file_path: str) -> int:
