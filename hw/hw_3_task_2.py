@@ -13,6 +13,7 @@ def slow_calculate(value):
 
 
 def helper_calc(func=slow_calculate):
-    pooler = Pool(processes=2)
-    result = pooler.map_async(func, list(range(10)))
-    return sum(result.get())
+    pooler = Pool(processes=20)
+    result = pooler.map(func, list(range(10)))
+    pooler.close()
+    return sum(result)

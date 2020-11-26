@@ -1,7 +1,7 @@
 from typing import Any, List
 
 import pytest
-from Epam_training_HW.hw.hw_2_task_3 import combi
+from Epam_training_HW.hw.hw_2_task_3 import combinations
 
 
 @pytest.mark.parametrize(
@@ -12,6 +12,6 @@ from Epam_training_HW.hw.hw_2_task_3 import combi
     ],
 )
 def test_combinations(value: List[Any], expected_result: List[List]):
-    actual_result = combi(*value)
+    actual_result = combinations(*value)
 
     assert actual_result == expected_result

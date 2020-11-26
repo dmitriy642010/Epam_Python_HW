@@ -1,8 +1,6 @@
 import itertools
+from typing import Any, List
 
 
-def combi(*args):
+def combinations(*args: List[Any]) -> List[List]:
     return list(itertools.product(*args))
-
-
-print(combi([1, 2], [3, 4]))
