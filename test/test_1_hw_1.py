@@ -1,4 +1,4 @@
-from ..Task_1.hw_1_task_1 import check_power_of_2
+from ..hw.Task_1.hw_1_task_1 import check_power_of_2
 
 import pytest
 

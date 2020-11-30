@@ -1,7 +1,7 @@
 from unittest.mock import MagicMock, patch
 from urllib.error import HTTPError
 
-from ..Task_4.hw_4_task_2 import count_dots_on_i
+from ..hw.Task_4.hw_4_task_2 import count_dots_on_i
 
 import pytest
 

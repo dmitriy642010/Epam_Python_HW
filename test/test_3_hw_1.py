@@ -1,6 +1,6 @@
 import os
 import pytest
-from ..Task_1.hw_1_task_3 import find_maximum_and_minimum
+from ..hw.Task_1.hw_1_task_3 import find_maximum_and_minimum
 
 
 @pytest.fixture()

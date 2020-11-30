@@ -1,10 +1,9 @@
 import os
 from typing import List
 
-from ..Task_2.hw_2_task_1 import (
+from ..hw.Task_2.hw_2_task_1 import (
     count_non_ascii_chars,
     count_punctuation_chars,
-    data_open,
     get_longest_diverse_words,
     get_most_common_non_ascii_char,
     get_rarest_char,

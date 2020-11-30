@@ -1,5 +1,5 @@
 import pytest
-from ..Task_3.hw_3_task_3 import make_filter
+from ..hw.Task_3.hw_3_task_3 import make_filter
 
 sample_data = [
     {

@@ -1,6 +1,6 @@
 from typing import List
 
-from ..Task_2.hw_2_task_4 import cache
+from ..hw.Task_2.hw_2_task_4 import cache
 
 
 def func(a, b):
@@ -25,3 +25,7 @@ def test_cache_list_args():
     val_1 = cache_func(some)
     val_2 = cache_func(some)
     assert val_1 is val_2
+
+
+def fun(*, param=10):
+    return param

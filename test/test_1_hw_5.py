@@ -1,6 +1,6 @@
 from datetime import timedelta
 
-from ..Task_5.hw_5_task_1 import Homework, Student, Teacher
+from ..hw.Task_5.hw_5_task_1 import Homework, Student, Teacher
 
 import pytest
 

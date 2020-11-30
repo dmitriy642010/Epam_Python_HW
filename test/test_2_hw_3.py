@@ -1,4 +1,4 @@
-from ..Task_3.hw_3_task_2 import helper_calc, slow_calculate
+from ..hw.Task_3.hw_3_task_2 import helper_calc, slow_calculate
 
 
 def test_fast_calculate():

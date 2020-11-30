@@ -1,7 +1,7 @@
 import os
 
 import pytest
-from ..Task_4.hw_4_task_1 import read_magic_number
+from ..hw.Task_4.hw_4_task_1 import read_magic_number
 
 
 @pytest.fixture()

@@ -14,7 +14,7 @@ def get_longest_diverse_words(file_path: str) -> List[str]:
     exclude = set(string.punctuation)
     text = ''.join(ch for ch in file if ch not in exclude)
     data_set = text.split()
-    data_set = sorted(data_set, key=lambda x: (len(set(x)), len(x)))
+    data_set = sorted(data_set, key=lambda x: (len(set(x)), len(x)), reverse=True)
     return data_set[:10]
 
 
@@ -26,15 +26,15 @@ def get_rarest_char(file_path: str) -> str:
             d[elem] = 1
         else:
             d[elem] += 1
-    minimum = min(d.values())
-    res = [str(num) for num, count in d.items() if count == minimum]
+    res = [str(num) for num, count in d.items() if count == min(d.values())]
     return res[0]
 
 
 def count_punctuation_chars(file_path: str) -> int:
     file = data_open(file_path)
-    res = [len(i) for i in file if i in string.punctuation]
-    return sum(res)
+    count = lambda l1, l2: sum([1 for x in l1 if x in l2])
+    res = count(file, set(string.punctuation))
+    return res
 
 
 def count_non_ascii_chars(file_path: str) -> int:
