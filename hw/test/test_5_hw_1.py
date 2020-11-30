@@ -1,7 +1,7 @@
 from typing import List
 
 import pytest
-from Epam_training_HW.hw.hw_1_task_5 import find_maximal_subarray_sum
+from ..Task_1.hw_1_task_5 import find_maximal_subarray_sum
 
 
 @pytest.mark.parametrize(

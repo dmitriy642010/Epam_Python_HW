@@ -1,7 +1,7 @@
 from typing import Any, List
 
 import pytest
-from Epam_training_HW.hw.hw_2_task_3 import combinations
+from ..Task_2.hw_2_task_3 import combinations
 
 
 @pytest.mark.parametrize(

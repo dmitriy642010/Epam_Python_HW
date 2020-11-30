@@ -1,7 +1,7 @@
 import os
 from typing import List
 
-from Epam_training_HW.hw.hw_2_task_1 import (
+from ..Task_2.hw_2_task_1 import (
     count_non_ascii_chars,
     count_punctuation_chars,
     data_open,

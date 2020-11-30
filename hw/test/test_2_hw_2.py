@@ -1,7 +1,7 @@
 from typing import List, Tuple
 
 import pytest
-from Epam_training_HW.hw.hw_2_task_2 import major_and_minor_elem
+from ..Task_2.hw_2_task_2 import major_and_minor_elem
 
 
 @pytest.mark.parametrize(

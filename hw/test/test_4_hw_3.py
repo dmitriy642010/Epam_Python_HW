@@ -1,5 +1,5 @@
 import pytest
-from Epam_training_HW.hw.hw_3_task_4 import is_armstrong
+from ..Task_3.hw_3_task_4 import is_armstrong
 
 
 @pytest.mark.parametrize(
