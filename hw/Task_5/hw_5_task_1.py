@@ -1,34 +1,38 @@
 from datetime import timedelta, datetime
+from dataclasses import dataclass
 
 
+@dataclass()
 class Homework:
-    def __init__(self, text: str, deadline):
-        self.text = text
-        self.deadline = timedelta(deadline)
-        self.created = datetime.now()
+    text: str
+    created: datetime.now()
+    deadline: int = timedelta()
 
-    def is_active(self) -> bool:
-        w_deadline = self.created + self.deadline
+    @classmethod
+    def is_active(cls) -> bool:
+        w_deadline = cls.created + cls.deadline
         now = datetime.now()
         return not now > w_deadline
 
 
+@dataclass(order=True)
 class Student:
-    def __init__(self, first_name: str, last_name: str):
-        self.first_name = first_name
-        self.last_name = last_name
+    first_name: str
+    last_name: str
 
-    def do_homework(self, task: Homework):
+    @staticmethod
+    def do_homework(task=Homework):
         if task.is_active() is False:
             print("You are late")
             return None
         return task
 
 
+@dataclass(order=True)
 class Teacher:
-    def __init__(self, first_name: str, last_name: str):
-        self.first_name = first_name
-        self.last_name = last_name
+    first_name: str
+    last_name: str
 
-    def create_homework(self, text: str, deadline):
+    @staticmethod
+    def create_homework(text: str, deadline):
         return Homework(text, deadline)

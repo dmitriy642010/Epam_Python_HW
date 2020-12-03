@@ -4,9 +4,10 @@ from typing import List
 def fizzbuzz(n: int) -> List[str]:
 
     """
+    Function takes a number N as an input and returns N FizzBuzz numbers.
+
     - Install Python 3.8 (https://www.python.org/downloads/)
-     - Install pytest `pip install pytest`
-     - Clone the repository https://github.com/dmitriy642010/Epam_Python_HW
+     - Clone the repository https://github.com/dmitriy642010/Epam_Python_HW/tree/HW4T4
      - Checkout branch HW4T4
      - Open terminal
      -Run python hw_4_task_4.py -v
