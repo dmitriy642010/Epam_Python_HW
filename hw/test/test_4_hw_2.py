@@ -1,6 +1,6 @@
 from typing import List
 
-from ..hw.Task_2.hw_2_task_4 import cache
+from Epam_training_HW.hw.Task_2.hw_2_task_4 import cache
 
 
 def func(a, b):
@@ -29,3 +29,11 @@ def test_cache_list_args():
 
 def fun(*, param=10):
     return param
+
+
+def test_cache_2():
+    cache_func = cache(fun)
+    some = 100, 200
+    val_1 = cache_func(some)
+    val_2 = cache_func(some)
+    assert val_1 is val_2

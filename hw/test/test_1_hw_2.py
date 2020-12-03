@@ -1,7 +1,6 @@
 import os
-from typing import List
 
-from ..hw.Task_2.hw_2_task_1 import (
+from Epam_training_HW.hw.Task_2.hw_2_task_1 import (
     count_non_ascii_chars,
     count_punctuation_chars,
     get_longest_diverse_words,

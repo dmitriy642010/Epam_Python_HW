@@ -1,4 +1,4 @@
-from ..hw.Task_4.hw_4_task_3 import my_precious_logger
+from Epam_training_HW.hw.Task_4.hw_4_task_3 import my_precious_logger
 
 
 def test_stdout(capsys):

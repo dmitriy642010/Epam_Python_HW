@@ -1,7 +1,7 @@
 import os
 
 import pytest
-from ..hw.Task_4.hw_4_task_1 import read_magic_number
+from Epam_training_HW.hw.Task_4.hw_4_task_1 import read_magic_number
 
 
 @pytest.fixture()
@@ -47,10 +47,10 @@ def test_incorrect_num(file_name):
     ],
 )
 def test_file_not_found_error(file_name):
-    with pytest.raises(FileNotFoundError, match="No file was found!"):
+    with pytest.raises(FileNotFoundError, match="No file here!"):
         read_magic_number("no_file.txt")
 
 
 def test_value_error(file_name):
-    with pytest.raises(ValueError, match="Should be number here!"):
+    with pytest.raises(ValueError, match="it's not a number!"):
         read_magic_number(file_name)

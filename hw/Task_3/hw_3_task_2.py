@@ -2,7 +2,7 @@ import hashlib
 import random
 import struct
 import time
-from multiprocessing import Pool
+import multiprocessing
 
 
 def slow_calculate(value):
@@ -13,7 +13,6 @@ def slow_calculate(value):
 
 
 def helper_calc(func=slow_calculate):
-    pooler = Pool(processes=20)
-    result = pooler.map(func, list(range(10)))
-    pooler.close()
-    return sum(result)
+    with multiprocessing.Pool(processes=40) as pool:
+        results = pool.map(func, list(range(501)))
+    return sum(results)

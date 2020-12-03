@@ -1,6 +1,6 @@
 from datetime import timedelta
 
-from ..hw.Task_5.hw_5_task_1 import Homework, Student, Teacher
+from Epam_training_HW.hw.Task_5.hw_5_task_1 import Homework, Student, Teacher
 
 import pytest
 

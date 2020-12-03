@@ -5,8 +5,7 @@ def read_magic_number(path: str) -> bool:
         n = int(file_read)
         return 1 <= n < 3
 
-    except FileNotFoundError:
-        raise ("No file was found!")
-
     except ValueError:
-        raise ("Should be number here!")
+        raise ValueError("it's not a number!")
+    except FileNotFoundError:
+        raise FileNotFoundError("No file here!")
