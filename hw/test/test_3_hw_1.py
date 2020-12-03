@@ -1,6 +1,6 @@
 import os
 import pytest
-from ..hw.Task_1.hw_1_task_3 import find_maximum_and_minimum
+from Epam_training_HW.hw.Task_1.hw_1_task_3 import find_maximum_and_minimum
 
 
 @pytest.fixture()
