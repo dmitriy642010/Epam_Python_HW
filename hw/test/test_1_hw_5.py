@@ -17,12 +17,12 @@ def teacher():
 
 @pytest.fixture()
 def expired_homework(teacher):
-    return teacher.create_homework("Learn Python basic", 0)
+    return teacher.create_homework("Learn functions", 0)
 
 
 @pytest.fixture()
 def current_homework(teacher):
-    return teacher.create_homework("create 1 class and function", 5)
+    return teacher.create_homework("create 2 simple classes", 5)
 
 
 def test_create_teacher(teacher):
@@ -37,7 +37,7 @@ def test_create_student(student):
 
 def test_create_homework(expired_homework):
     assert expired_homework.deadline == timedelta(0, 0, 0)
-    assert expired_homework.text == "Learn Python basic"
+    assert expired_homework.text == "Learn functions"
 
 
 def test_do_current_homework(student, current_homework, capsys):
