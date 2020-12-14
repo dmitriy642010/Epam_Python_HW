@@ -1,72 +1,27 @@
+import itertools
 from typing import List
 
 
 def tic_tac_toe_checker(board: List[List]) -> str:
+    def check_win(row: List):
+        if all(map(lambda x: x == "x", row)):
+            return "x"
+        elif all(map(lambda x: x == "o", row)):
+            return "o"
+        return False
 
-    for line_num, line in enumerate(board):
-        last_check = check_horizontal_line(board, line_num)
-        if last_check != None:
-            return last_check
+    all_lines_to_check_win = (
+        board
+        + [[board[i][j] for i in range(3)] for j in range(3)]
+        + [[board[i][i] for i in range(3)]]
+        + [[board[i][2 - i] for i in range(3)]]
+    )
 
-    for line_num, line in enumerate(board):
-        last_check = check_vertical_line(board, line_num)
-        if last_check != None:
-            return last_check
+    for line in all_lines_to_check_win:
+        if check_win(line):
+            return f"{check_win(line)} wins!"
 
-    last_check = check_diagonal_lines(board)
-    return last_check
+    if "-" in itertools.chain(*board):
+        return "unfinished"
 
-
-def check_horizontal_line(board, row_num):
-    row_num = []
-    for row_num in board[0]:
-        if all(a == 'x' for a in row_num):
-            return 'x'
-        elif all(a == 'o' for a in row_num):
-            return 'o'
-    return check_list_contains_all_x_or_o(row_num)
-
-
-def check_vertical_line(board, col_num):
-    col_num = []
-    for col_num in zip(board):
-        if all(a == 'x' for a in col_num):
-            return 'x'
-        elif all(a == 'o' for a in col_num):
-            return 'o'
-    return check_list_contains_all_x_or_o(col_num)
-
-
-def check_diagonal_lines(board):
-
-    line_vals = []
-
-    for count1, vert_line in enumerate(board):
-        line_vals.append(vert_line[count1])
-        count1 += 1
-    check_val = check_list_contains_all_x_or_o(line_vals)
-    if check_val != None:
-        return check_val
-
-    line_vals = []
-    for count1, vert_line in enumerate(reversed(board)):
-        line_vals.append(vert_line[count1])
-        count1 += 1
-    check_val = check_list_contains_all_x_or_o(line_vals)
-    return check_val
-
-
-def check_list_contains_all_x_or_o(elementlist):
-
-    if is_list_of(elementlist, "x"):
-        return "x wins!"
-    if is_list_of(elementlist, "o"):
-        return "o wins!"
-
-    return "unfinished"
-
-
-def is_list_of(elementlist, search_string):
-
-    if elementlist.count(search_string) == len(elementlist):
-        return True
+    return "draw!"

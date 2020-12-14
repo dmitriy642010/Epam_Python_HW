@@ -1,5 +1,5 @@
 import pytest
-from Epam_training_HW.hw.Task_7.hw_7_task_1 import find_occurences
+from Epam_training_HW.hw.Task_7.hw_7_task_1 import find_occurrences
 
 example_tree = {
     "first": ["RED", "BLUE"],
@@ -25,5 +25,5 @@ example_tree = {
         (example_tree, "RED", 6),
     ],
 )
-def test_occurences(value_1, value_2, expected_result):
-    assert find_occurences(value_1, value_2) == expected_result
+def test_occurrences(value_1, value_2, expected_result):
+    assert find_occurrences(value_1, value_2) == expected_result
