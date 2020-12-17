@@ -1,4 +1,5 @@
 from collections import defaultdict
+from dataclasses import dataclass
 from datetime import timedelta, datetime
 from typing import Optional
 
@@ -8,11 +9,12 @@ class DeadlineError(Exception):
         super().__init__("You are late.")
 
 
+@dataclass
 class Person:
-    def __init__(self, first_name: str, last_name: str):
-        """Create an instance of a person."""
-        self.last_name = last_name
-        self.first_name = first_name
+    """Create an instance of a person."""
+
+    first_name: str
+    last_name: str
 
 
 class Homework:
