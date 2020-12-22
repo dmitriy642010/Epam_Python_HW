@@ -6,7 +6,7 @@ import pytest
 @pytest.fixture()
 def presidents():
     return TableData(
-        database_name="./test/example.sqlite",
+        database_name="C:/Users/admin/Desktop/Epam_git_env/Epam_training_HW/hw/test/example.sqlite",
         table_name="presidents",
     )
 
