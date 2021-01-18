@@ -22,7 +22,7 @@ from bs4 import BeautifulSoup
 import requests
 
 
-def currency_conversion() -> float:
+def get_exchange_rate() -> float:
 
     url_cbr = "http://www.cbr.ru/scripts/XML_daily.asp"
     page = requests.get(url_cbr)
@@ -37,7 +37,7 @@ async def get_page(url: str) -> str:
             return await response.text()
 
 
-async def list_of_companies_from_page(path: str, page: int) -> List:
+async def get_companies_from_page(path: str, page: int) -> List:
 
     start_page = path + "index/components/s&p_500"
     base_url = start_page + " ?p={}"
@@ -66,7 +66,7 @@ async def get_companies_from_all_pages() -> List[List]:
 
     path = "https://markets.businessinsider.com/"
     pages = page_count(path)
-    tasks = [list_of_companies_from_page(path, i) for i in range(1, pages + 1)]
+    tasks = [get_companies_from_page(path, i) for i in range(1, pages + 1)]
     return await asyncio.gather(*tasks)
 
 
@@ -117,7 +117,7 @@ def save_to_json(filename: str, value_name: str, data: List[Dict]) -> None:
 async def get_all_information() -> List[Dict]:
 
     companies = await get_companies_from_all_pages()
-    exchange_rate = currency_conversion()
+    exchange_rate = get_exchange_rate()
     tasks = []
     for page in companies:
         for company in page:
@@ -125,10 +125,9 @@ async def get_all_information() -> List[Dict]:
     return await asyncio.gather(*tasks)
 
 
-def main():
+def main() -> None:
 
     companies_info = asyncio.run(get_all_information())
-
     save_to_json(
         "top_growth",
         "growth",
@@ -150,3 +149,7 @@ def main():
         param,
         sorted(companies_info, key=lambda x: x[param], reverse=True)[0:10],
     )
+
+
+if __name__ == "__main__":
+    main()
